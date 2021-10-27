@@ -96,7 +96,7 @@ pub fn format_line(line: &str, lineno: usize, range: Range<usize>) -> String {
 
     format!(
         "{0: >6}:{1: <3} {2}{3}{4}",
-        lineno.to_string().blue(),
+        lineno.to_string().magenta(),
         (prefix.chars().count() + 1).to_string().cyan(),
         prefix,
         &line[start..end].red(),
@@ -113,7 +113,7 @@ mod tests {
         let result = format_line("Hello, Dapeng~", 120, 7..13);
         let expected = format!(
             "{0: >6}:{1: <3} Hello, {2}~",
-            "120".blue(),
+            "120".magenta(),
             "8".cyan(),
             "Dapeng".red()
         );
